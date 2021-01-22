@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login and Registration Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="form-box">
+            <div class="button-box">
+               <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="Login()" >Login</button>  
+                <button type="button" class="toggle-btn" onclick="Register()">Register</button>  
+            </div>  
+            <div class="social-icons">
+            <img src="fb.jpg">
+            <img src="twitter.jpg">
+            <img src="instagram.jpg">
+            <img src="telegram.jpg">
+        </div>
+        <form id="Login" class="input-group">
+           <input type="email" class="input-field" placeholder="Email" required><br/>
+            <input type="password" class="input-field" placeholder="Password" required><br/><br/>
+            <p style="color:red;">Forgot Password?</p><br/>
+            <input type="submit" class="submit-btn" ><br/>
+        </form>
+        <form id="Register" class="input-group">
+           <input type="text" class="input-field" placeholder="Firstname" required>
+           <input type="text" class="input-field" placeholder="Lastname" required>
+           <input type="email" class="input-field" placeholder="Email" required>
+            <input type="password" class="input-field" placeholder="Password" required>
+            <input type="checkbox"class="check-box"><span>Remeber Password</span>
+            <button type="submit" class="submit-btn">Register</button>
+        </form>
+        
+        </div>
+    </div>
+    
+    <script>
+        var x=document.getElementById("Login");
+        var y=document.getElementById("Register");
+        var z=document.getElementById("btn");
+        function Register(){
+            x.style.left= "-400px";
+            y.style.left="50px";
+            z.style.left="110px";
+        }
+        function Login(){
+            x.style.left= "50px";
+            y.style.left="450px";
+            z.style.left="0";
+                          
+        }
+    
+    </script>
+     <script type="text/javascript">
+        function verifyNull() {
+            if (!document.getElementById('username').value.trim().length) {
+                alert('Please enter username');
+            }
+            else if (!document.getElementById('password').value.trim().length) {
+                alert('Please enter password');
+            }
+        }
+       function verifyEmail() {
+            var x = document.getElementById('email').value;
+            var atpos = x.indexOf("@");
+            var dotpos = x.lastIndexOf(".");
+            if (atpos< 1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+                alert("Not a valid e-mail address");
+                return false;
+            }
+        }
+        
+    </script>
+</body>
+
+</html>
